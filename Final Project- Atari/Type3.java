@@ -1,6 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-public class Type3 extends Enemy{
-    public void act(){
-        move(400,100);
-    }
+
+/**
+ * Write a description of class Type3 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Type3 extends Enemy
+{
+    /**
+     * Act - do whatever the Type3 wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        // Add your action code here.
+    }    
 }

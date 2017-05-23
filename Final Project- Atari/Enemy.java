@@ -3,19 +3,22 @@ public class Enemy extends Actor
 {
     public int x;
     public int y;
-    public Enemy(){
+    public Enemy(int x, int y){
         setRotation(315);
         this.x = x;
         this.y = y;
     }
     public void act() 
     {
-        move(x,y);
+        move();
     }
     int getx(){
         return x;
     }
-    public void move(int x, int y){
+    int gety(){
+        return y;
+    }
+    public void move(){
        while(getX()!=100&&getY()!=150){
            move(10);
            turnTowards(100,150);

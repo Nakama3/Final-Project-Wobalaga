@@ -1,11 +1,12 @@
 #BlueJ class context
-comment0.target=Enemy
+comment0.params=x\ y
+comment0.target=Enemy(int,\ int)
 comment1.params=
-comment1.target=Enemy()
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
+comment2.target=int\ getx()
 comment3.params=
-comment3.target=int\ getx()
-comment4.params=x\ y
-comment4.target=void\ move(int,\ int)
+comment3.target=int\ gety()
+comment4.params=
+comment4.target=void\ move()
 numComments=5
