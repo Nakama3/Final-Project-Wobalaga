@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon May 22 09:06:17 PDT 2017
+#Mon May 22 20:26:49 PDT 2017
 target4.type=ClassTarget
 target8.showInterface=false
 dependency3.from=Bullets_Enemy
@@ -26,7 +26,7 @@ target5.editor.width=900
 class.Enemy.image=jellyfish.png
 target5.editor.y=188
 target5.editor.x=810
-version=2.5.0
+version=3.0.0
 target2.naviview.expanded=true
 target4.editor.height=700
 target7.editor.y=20
