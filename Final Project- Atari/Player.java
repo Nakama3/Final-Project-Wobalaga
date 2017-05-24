@@ -7,11 +7,11 @@ public class Player extends Actor
     }    
     public void move()//The movement of the bar
     {
-        if (Greenfoot.isKeyDown("left"))
+        if (Greenfoot.isKeyDown("A"))
        {
            move (-3);
        }   
-       if (Greenfoot.isKeyDown("right"))
+       if (Greenfoot.isKeyDown("D"))
        {
            move (3);
        }

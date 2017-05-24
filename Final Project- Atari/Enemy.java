@@ -1,25 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-public class Enemy extends Actor
+public abstract class Enemy extends Actor
 {
     public int x;
     public int y;
-    public Enemy(int x, int y){
+    public char D;
+    public boolean ready =false;
+    public Enemy(){
         setRotation(315);
         this.x = x;
         this.y = y;
+        this.ready = ready;
     }
     public void act() 
     {
-        move();
+        move(x,y,D);
     }
     int getx(){
         return x;
     }
-    int gety(){
-        return y;
-    }
-    public void move(){
-       while(getX()!=100&&getY()!=150){
+    public void move(int x, int y, char D){
+       if(D=='L'){
+        while(getX()!=100&&getY()!=150){
            move(10);
            turnTowards(100,150);
            Greenfoot.delay(10);
@@ -28,14 +29,37 @@ public class Enemy extends Actor
            turn(50);
            Greenfoot.delay(2);
         }
-        while(getX()!=50&&getY()!=50){
+        while(getX()!=x&&getY()!=y){
            move(10);
            turnTowards(x,y);
            Greenfoot.delay(10);
        }
-       if(getX()==50&&getY()==50){
+       if(getX()==x&&getY()==y){
             move(0);
-            turnTowards(50,0);
+            turnTowards(x,0);
        }
+       ready=true;
+    }
+    if(D=='R'){
+        while(getX()!=400&&getY()!=150){
+           move(10);
+           turnTowards(400,150);
+           Greenfoot.delay(10);
+       }
+       for(int i=0; i<5;i++){
+           turn(50);
+           Greenfoot.delay(2);
+        }
+        while(getX()!=x&&getY()!=y){
+           move(10);
+           turnTowards(x,y);
+           Greenfoot.delay(10);
+       }
+       if(getX()==x&&getY()==y){
+            move(0);
+            turnTowards(x,0);
+       }
+       ready=true;
+    }
     }
 }

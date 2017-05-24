@@ -1,12 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Type1 extends Enemy
 {
-    /**
-     * Act - do whatever the Type1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    public int x;
+    public int y;
+    public char D;
+    public Type1(int x, int y, char D){
+        this.x=x;
+        this.y=y;
+        this.D=D;
+    }
+    public void act(){
+        move(x,y,D);
+    }
 }
