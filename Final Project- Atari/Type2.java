@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Type2 extends Enemy{
+    public String name;
     public int x;
     public int y;
     public char D;
-    public Type2(int x, int y, char D){
-        this.x=x;
-        this.y=y;
-        this.D=D;
+    public boolean ready;
+    public Type2(String name, int x, int y, char D){
+        super(name, x, y, D);
     }
     public void act(){
-        move(x,y,D);
+        spawn(x,y,D);
     }
 }

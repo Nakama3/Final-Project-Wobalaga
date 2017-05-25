@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=x\ y\ D
-comment0.target=Type1(int,\ int,\ char)
+comment0.params=name\ x\ y\ D
+comment0.target=Type1(java.lang.String,\ int,\ int,\ char)
 comment1.params=
 comment1.target=void\ act()
 numComments=2

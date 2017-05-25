@@ -1,4 +1,10 @@
 #BlueJ class context
-comment0.params=type
-comment0.target=void\ act(java.lang.String)
-numComments=1
+comment0.params=x\ y
+comment0.target=Bullets(int,\ int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=x\ y
+comment2.target=void\ shoot(int,\ int)
+comment3.params=
+comment3.target=boolean\ PDestroyed()
+numComments=4
