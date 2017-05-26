@@ -1,19 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class BType1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class BType1 extends Bullets
 {
-    /**
-     * Act - do whatever the BType1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    int x;
+    int y;
+    boolean Death=false;
+    Actor z;
+    public BType1(int x, int y, Actor z){
+        super(x,y,z);
+    }
+    public boolean Destroyed(){
+        return Death = true;
+    }
+     
 }

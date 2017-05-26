@@ -4,22 +4,22 @@ public abstract class Bullets extends Actor
     int x;
     int y;
     boolean PDeath=false;
-    public Bullets(int x, int y){
+    Actor z;
+    public Bullets(int x, int y, Actor z){
         this.x = x;
         this.y = y;
+        this.z = z;
     }
     public void act(){
-        shoot(x,y);
+        shoot(x,y,z);
     }
-    public void shoot(int x, int y){
+    public void shoot(int x, int y, Actor z){
         setLocation(x,y);
         turnTowards(x,0);
         move(10);
-        if(true){
-            PDestroyed();
+        if(intersects(z)){
+            Destroyed();
         }
     }    
-    public boolean PDestroyed(){
-        return PDeath = true;
-    }
+    public abstract boolean Destroyed();
 }
