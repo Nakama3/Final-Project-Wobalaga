@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=BType1
+comment0.target=PBullets
 comment1.params=x\ y\ z
-comment1.target=BType1(int,\ int,\ greenfoot.Actor)
+comment1.target=PBullets(int,\ int,\ greenfoot.Actor)
 comment2.params=
 comment2.target=boolean\ Destroyed()
 numComments=3

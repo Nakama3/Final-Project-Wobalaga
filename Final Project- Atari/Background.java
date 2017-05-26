@@ -11,11 +11,11 @@ public class Background extends World
         int Lives = 2;
         ArrayList<Enemy> enemies = new ArrayList<Enemy>();
         for(int i= 0; i<6; i++){
-            addObject(new Type1("blue"+i, row2x,200,'L'),row2x,100);
+            addObject(new Type1("blue"+i, row2x,200,'L'), 0, 710);
             row2x=row2x+50;
        }
         for(int i= 0; i<4; i++){
-            addObject(new Type1("red"+i, row1x,400,'R'),500,710);
+            addObject(new Type1("red"+i, row1x,400,'R'), 500, 710);
             row1x=row1x-50;
        }
         addObject(new Player(), 250,690);

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-public class BType1 extends Bullets
+public class BType1 extends EBullets
 {
     int x;
     int y;

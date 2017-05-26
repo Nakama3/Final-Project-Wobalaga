@@ -1,19 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class BType3 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class BType3 extends Bullets
+public class BType3 extends EBullets
 {
-    /**
-     * Act - do whatever the BType3 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    int x;
+    int y;
+    boolean Death=false;
+    Actor z;
+    public BType3(int x, int y, Actor z){
+        super(x,y,z);
+    }
+    public boolean Destroyed(){
+        return Death = true;
+    }
 }
