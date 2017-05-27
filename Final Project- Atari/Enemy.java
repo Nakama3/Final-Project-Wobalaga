@@ -70,7 +70,7 @@ public abstract class Enemy extends Actor
     }
     }
     public void shoot(){
-        while(true){
+        while(ready==true){
             for(int i=0; i<3; i++){
                 
                 Greenfoot.delay(20);

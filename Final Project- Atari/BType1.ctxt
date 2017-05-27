@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=BType1
-comment1.params=x\ y\ z
-comment1.target=BType1(int,\ int,\ greenfoot.Actor)
+comment1.params=x\ y\ z\ speed
+comment1.target=BType1(int,\ int,\ greenfoot.Actor,\ int)
 comment2.params=
-comment2.target=boolean\ Destroyed()
+comment2.target=boolean\ Hit()
 numComments=3

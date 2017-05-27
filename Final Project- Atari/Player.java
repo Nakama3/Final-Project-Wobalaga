@@ -4,6 +4,7 @@ public class Player extends Actor
     public void act() 
     {
         move();
+        shoot();
     }    
     public void move()//The movement of the bar
     {
@@ -15,5 +16,10 @@ public class Player extends Actor
        {
            move (3);
        }
+    }
+    public void shoot(){
+        if(Greenfoot.isKeyDown("Space")){
+            getWorld().addObject(new PBullets(), getX(), getY());
+        }
     }
 }

@@ -3,12 +3,13 @@ public class BType1 extends EBullets
 {
     int x;
     int y;
+    int speed;
     boolean Death=false;
     Actor z;
-    public BType1(int x, int y, Actor z){
-        super(x,y,z);
+    public BType1(int x, int y, Actor z, int speed){
+        super(x,y,z,speed);
     }
-    public boolean Destroyed(){
+    public boolean Hit(){
         return Death = true;
     }
      

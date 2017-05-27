@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PBullets extends Actor
 {
-    int x;
-    int y;
-    boolean Death=false;
-    Actor z;
-    public PBullets(int x, int y, Actor z){
-        
+    public void act(){
+        Shot();
     }
-    public boolean Destroyed(){
-        return Death = true;
+    public void Shot(){
+         setRotation(90);
+         move(10);
+         if(getOneIntersectingObject(Enemy.class)!=null){
+             getWorld().remove(Enemy.class);
+         }
     }
 }
