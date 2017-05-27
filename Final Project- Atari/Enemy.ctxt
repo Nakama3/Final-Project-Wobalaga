@@ -1,13 +1,11 @@
 #BlueJ class context
 comment0.target=Enemy
-comment1.params=name\ x\ y\ D
-comment1.target=Enemy(java.lang.String,\ int,\ int,\ char)
+comment1.params=x\ y
+comment1.target=Enemy(int,\ int)
 comment2.params=
 comment2.target=void\ act()
-comment3.params=
-comment3.target=int\ getx()
-comment4.params=x\ y\ D
-comment4.target=void\ spawn(int,\ int,\ char)
-comment5.params=
-comment5.target=void\ shoot()
-numComments=6
+comment3.params=x\ y
+comment3.target=void\ spawn(int,\ int)
+comment4.params=
+comment4.target=void\ shoot()
+numComments=5

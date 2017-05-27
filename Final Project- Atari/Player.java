@@ -8,18 +8,18 @@ public class Player extends Actor
     }    
     public void move()//The movement of the bar
     {
-        if (Greenfoot.isKeyDown("A"))
+        if (Greenfoot.isKeyDown("left"))
        {
            move (-3);
        }   
-       if (Greenfoot.isKeyDown("D"))
+       if (Greenfoot.isKeyDown("right"))
        {
            move (3);
        }
     }
     public void shoot(){
         if(Greenfoot.isKeyDown("Space")){
-            getWorld().addObject(new PBullets(), getX(), getY());
+            getWorld().addObject(new PBullets(), getX(), getY()-16);
         }
     }
 }

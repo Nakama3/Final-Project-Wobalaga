@@ -3,5 +3,5 @@ comment0.target=PBullets
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
-comment2.target=boolean\ Hit()
+comment2.target=void\ Shot()
 numComments=3

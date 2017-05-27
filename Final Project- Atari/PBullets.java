@@ -5,10 +5,10 @@ public class PBullets extends Actor
         Shot();
     }
     public void Shot(){
-         setRotation(90);
+         setRotation(270);
          move(10);
          if(getOneIntersectingObject(Enemy.class)!=null){
-             getWorld().remove(Enemy.class);
+             removeTouching(Enemy.class);
          }
     }
 }
