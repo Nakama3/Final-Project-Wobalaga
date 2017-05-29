@@ -19,7 +19,7 @@ public class Player extends Actor
     }
     public void shoot(){
         if(Greenfoot.isKeyDown("Space")){
-            getWorld().addObject(new PBullets(), getX(), getY()-16);
+            getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }
 }

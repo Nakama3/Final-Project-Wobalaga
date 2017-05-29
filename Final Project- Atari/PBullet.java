@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-public class PBullets extends Actor
+public class PBullet extends Actor
 {
     public void act(){
         Shot();
@@ -9,6 +9,7 @@ public class PBullets extends Actor
          move(10);
          if(getOneIntersectingObject(Enemy.class)!=null){
              removeTouching(Enemy.class);
-         }
+             
+            }
     }
 }
