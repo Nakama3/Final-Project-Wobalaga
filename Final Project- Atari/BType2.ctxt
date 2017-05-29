@@ -1,7 +1,5 @@
 #BlueJ class context
 comment0.target=BType2
-comment1.params=x\ y\ z\ speed
-comment1.target=BType2(int,\ int,\ greenfoot.Actor,\ int)
-comment2.params=
-comment2.target=boolean\ Hit()
-numComments=3
+comment1.params=
+comment1.target=void\ act()
+numComments=2

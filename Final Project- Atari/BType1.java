@@ -1,16 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-public class BType1 extends EBullets
+public class BType1 extends EBullet
 {
-    int x;
-    int y;
-    int speed;
-    boolean Death=false;
-    Actor z;
-    public BType1(int x, int y, Actor z, int speed){
-        super(x,y,z,speed);
+    public void act(){
+        Shot();
     }
-    public boolean Hit(){
-        return Death = true;
-    }
-     
 }

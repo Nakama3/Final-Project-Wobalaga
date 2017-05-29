@@ -3,6 +3,7 @@ public abstract class Enemy extends Actor
 {
     public int x;
     public int y;
+    EBullet z = new EBullet();
     public int w = 500;
     public int h = 712;
     public boolean ready = false;
@@ -14,10 +15,10 @@ public abstract class Enemy extends Actor
     }
     public void act() 
     {
-        spawn(x,y);
+        spawnMove(x,y);
         
     }
-    public void spawn(int x, int y){
+    public void spawnMove(int x, int y){
        if(getX()!=w/2&&getY()!=h/2&&a==false){ 
             turnTowards(w/2,h/2);
             move(3);
@@ -30,11 +31,11 @@ public abstract class Enemy extends Actor
             move(3);
         }
        //move(0);
-    }       
-    public void shoot(){
-        while(ready==true){
+    }     
+    public void shoot(Actor z){
+        if(ready = true){
             for(int i=0; i<3; i++){
-                
+                getWorld().addObject(z, getX(), getY()+16);
                 Greenfoot.delay(20);
             }
             Greenfoot.delay(30);

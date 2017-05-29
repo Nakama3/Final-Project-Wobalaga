@@ -8,10 +8,10 @@ public class Background extends World
         int numofEnemies = 10;
         int Lives = 2;
         addObject(new Type1(100,100), 0, 710);
+        
         addObject(new Player(), 250, 690);
    }
    public void act(){
-       
     }
    public void spawn(){
        for(int i= 0; i<6; i++){

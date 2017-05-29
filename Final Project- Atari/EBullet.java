@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-public class PBullet extends Actor
+public class EBullet extends Actor
 {
     public void act(){
         Shot();
     }
     public void Shot(){
-         setRotation(270);
+         setRotation(90);
          move(10);
-         if(getOneIntersectingObject(Enemy.class)!=null){
-             removeTouching(Enemy.class);
+         if(getOneIntersectingObject(Player.class)!=null){
+             removeTouching(Player.class);
            }
         }
-    }
+}
