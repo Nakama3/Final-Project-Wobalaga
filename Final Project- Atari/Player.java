@@ -16,6 +16,14 @@ public class Player extends Actor
        {
            move (3);
        }
+        if (Greenfoot.isKeyDown("a"))
+       {
+           move (-3);
+       }   
+       if (Greenfoot.isKeyDown("d"))
+       {
+           move (3);
+       }
     }
     public void shoot(){
         if(Greenfoot.isKeyDown("Space")){
