@@ -1,7 +1,5 @@
 #BlueJ class context
-comment0.target=Type3
-comment1.params=x\ y
-comment1.target=Type3(int,\ int)
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment0.params=
+comment0.target=void\ act()
+comment0.text=public\ Type3(int\ x,\ int\ y){\r\n\ \ \ \ \ \ \ \ super(x,\ y);\r\n}
+numComments=1

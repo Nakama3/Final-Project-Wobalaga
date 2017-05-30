@@ -6,9 +6,12 @@ public class EBullet extends Actor
     }
     public void Shot(){
          setRotation(90);
-         move(10);
+         move(2);
          if(getOneIntersectingObject(Player.class)!=null){
              removeTouching(Player.class);
            }
+         if(getY()>700){
+             getWorld().removeObject(new EBullet());
+            }
         }
 }

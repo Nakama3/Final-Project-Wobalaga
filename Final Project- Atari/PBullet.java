@@ -10,5 +10,8 @@ public class PBullet extends Actor
          if(getOneIntersectingObject(Enemy.class)!=null){
              removeTouching(Enemy.class);
            }
+         if(getY()<5){
+             getWorld().removeObject(new PBullet());
+            }
         }
     }

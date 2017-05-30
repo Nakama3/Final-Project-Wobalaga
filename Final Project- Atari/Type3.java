@@ -3,11 +3,11 @@ public class Type3 extends Enemy{
     public int x;
     public int y;
     BType3 z = new BType3();
-    public Type3(int x, int y){
+    /*public Type3(int x, int y){
         super(x, y);
-    }
+    }*/
     public void act(){
-        spawnMove(x,y);
+        //spawnMove(x,y);
         shoot(z);
     }
 }
