@@ -10,6 +10,7 @@ public class PBullet extends Actor
          move(10);
          if(getOneIntersectingObject(Enemy.class)!=null){
              removeTouching(Enemy.class);
+             ((Background)getWorld()).minusE();
              getWorld().removeObject(this);
              hit = true;
            }

@@ -4,18 +4,29 @@ public class Background extends World
    int row2x = 75;
    int row1x = 350;
    int Lives = 3;
-   int numofEnemies = 10;
-   boolean ready = false;
+   int numE;
+   boolean R = false;
+   boolean R1 = false;
+   boolean R2 = false;
+   boolean R3 = false;
     public Background(){    
         super(500, 710, 1); 
-        setBackground(new GreenfootImage("bulletplayer.png"));
    }
    public void act(){
-       spawn();
+       Begin();
+       getE();
     }
-   public void spawn(){
-       if(Greenfoot.getKey()=="shift"){    
-           setBackground(new GreenfootImage("space.jpg"));
+   public void Begin(){
+       setBackground(new GreenfootImage("bulletplayer.png"));
+       if(Greenfoot.isKeyDown("s")==true||R==true){
+           Level1();
+           R=true;
+        }
+    }
+   public void Level1(){
+       setBackground(new GreenfootImage("space.jpg"));
+       numE=10;
+       if(Greenfoot.isKeyDown("1")==true){    
             for(int i= 0; i<6; i++){
                 addObject(new Type1(), row2x, 200);
                 row2x=row2x+75;
@@ -25,19 +36,45 @@ public class Background extends World
                 addObject(new Type1(), row1x, 400);
                 row1x=row1x-75;
            }
-            //addObject(new Type3(), 250,200);
             addObject(new Player(), 250,670);   
             addObject(new Life1(), 50, 50);
             addObject(new Life2(), 100, 50);
-            Greenfoot.stop();
-            if(ready==false&&Greenfoot.isKeyDown("enter")){
-                Greenfoot.start();
-                ready=true;
-            }
+        }
+       if(numE==0){
+           Level2();
         }
     }
-   public int minusE(){
-       return numofEnemies--;
+   public void Level2(){
+       if(Greenfoot.isKeyDown("2")==true){    
+            for(int i= 0; i<6; i++){
+                addObject(new Type1(), row2x, 200);
+                row2x=row2x+75;
+           }
+            for(int i= 0; i<4; i++){
+                Greenfoot.delay(5);
+                addObject(new Type1(), row1x, 400);
+                row1x=row1x-75;
+           }
+        }
+    }
+   public void Level3(){
+       if(Greenfoot.isKeyDown("3")==true){    
+            for(int i= 0; i<6; i++){
+                addObject(new Type1(), row2x, 200);
+                row2x=row2x+75;
+           }
+            for(int i= 0; i<4; i++){
+                Greenfoot.delay(5);
+                addObject(new Type1(), row1x, 400);
+                row1x=row1x-75;
+           }
+        }
+    } 
+   public void minusE(){
+       numE=numE-1;
+    }
+   public int getE(){
+       return numE;
     }
    public void minusLives(){
        if(Lives==3){
