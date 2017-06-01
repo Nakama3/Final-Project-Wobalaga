@@ -26,14 +26,14 @@ public class Background extends World
    public void Level1(){
        setBackground(new GreenfootImage("space.jpg"));
        numE=10;
+       R=false;
        if(Greenfoot.isKeyDown("1")==true){    
             for(int i= 0; i<6; i++){
                 addObject(new Type1(), row2x, 200);
                 row2x=row2x+75;
            }
             for(int i= 0; i<4; i++){
-                Greenfoot.delay(5);
-                addObject(new Type1(), row1x, 400);
+                addObject(new Type1(), row1x, 300);
                 row1x=row1x-75;
            }
             addObject(new Player(), 250,670);   
@@ -51,8 +51,11 @@ public class Background extends World
                 row2x=row2x+75;
            }
             for(int i= 0; i<4; i++){
-                Greenfoot.delay(5);
-                addObject(new Type1(), row1x, 400);
+                addObject(new Type1(), row1x, 300);
+                row1x=row1x-75;
+           }
+           for(int i= 0; i<4; i++){
+                addObject(new Type2(), row1x, 400);
                 row1x=row1x-75;
            }
         }
@@ -64,7 +67,6 @@ public class Background extends World
                 row2x=row2x+75;
            }
             for(int i= 0; i<4; i++){
-                Greenfoot.delay(5);
                 addObject(new Type1(), row1x, 400);
                 row1x=row1x-75;
            }
