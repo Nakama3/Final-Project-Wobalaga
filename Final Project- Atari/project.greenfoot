@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Jun 01 08:24:46 PDT 2017
+#Thu Jun 01 08:56:59 PDT 2017
 target12.editor.height=700
 target10.editor.width=1122
 editor.fx.0.height=722
@@ -58,6 +58,7 @@ target10.typeParameters=
 target1.editor.height=700
 dependency4.from=Player
 dependency5.to=Player
+class.Boss.image=WhaleBosswithscarlarger.png
 target4.editor.height=700
 target1.name=Type2
 target10.showInterface=false
@@ -75,7 +76,7 @@ world.lastInstantiated=Background
 mainWindow.width=804
 readme.width=47
 class.BType3.superclass=EBullet
-class.PBullet.image=bulletplayer (1).png
+class.PBullet.image=bulletplayerLeft.png
 target10.editor.y=29
 target9.name=Logo
 target10.editor.x=390
@@ -164,6 +165,7 @@ target9.y=130
 target9.x=100
 target3.type=ClassTarget
 target6.height=50
+class.Boss.superclass=Enemy
 dependency12.to=Background
 target3.editor.width=900
 target7.y=0
@@ -212,10 +214,8 @@ class.Test.image=bee.png
 target14.editor.height=700
 project.charset=UTF-8
 target3.showInterface=false
-class.Logo.image=wombalagaLOGO.png
 class.Test.superclass=greenfoot.Actor
 target3.name=Player
-class.Logo.superclass=greenfoot.Actor
 target14.editor.width=900
 class.Life1.superclass=greenfoot.Actor
 target6.showInterface=false
