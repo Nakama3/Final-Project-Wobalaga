@@ -20,13 +20,15 @@ public class Background extends World
        setBackground(new GreenfootImage("startscreen.png"));
        if(Greenfoot.isKeyDown("s")==true||R==true){
            Level1();
+           R=true;
         }
     }
    public void Level1(){
-       setBackground(new GreenfootImage("space.jpg"));
+       setBackground(new GreenfootImage("level1text.png"));
        numE=10;
        R=false;
-       if(Greenfoot.isKeyDown("1")==true||R1==true){    
+       if(Greenfoot.isKeyDown("1")==true||R1==true){
+           setBackground(new GreenfootImage("space.jpg"));
             for(int i= 0; i<4; i++){
                 addObject(new Type1(), E2x, 200);
                 E2x=E2x+75;
@@ -38,6 +40,7 @@ public class Background extends World
             addObject(new Player(), 250,670);   
             addObject(new Life1(), 50, 50);
             addObject(new Life2(), 100, 50);
+            R1=true;
         }
        if(numE==0){
            Greenfoot.stop();
