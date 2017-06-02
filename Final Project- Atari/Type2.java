@@ -15,7 +15,7 @@ public class Type2 extends Enemy{
         double m = Math.random()*20;
         int n = (int)m;
         //if(n==5){
-            while(getObjectsInRange(100, Player.class)==null){
+            if(getObjectsInRange(100, Player.class)==null){
                 move(1);
                 turnTowards(P.getX(), P.getY());
             }

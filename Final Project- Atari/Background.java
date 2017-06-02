@@ -7,11 +7,14 @@ public class Background extends World
    int Lives = 3;
    int Level = 1;
    int numE;
+   int BHP;
    boolean hit;
    boolean R = false;
    boolean R1 = false;
    boolean R2 = false;
    boolean R3 = false;
+   boolean L;
+   String x = new String();
     public Background(){    
         super(500, 710, 1);
        setBackground(new GreenfootImage("startscreen.png"));
@@ -34,7 +37,19 @@ public class Background extends World
         //}
    }
    public void act(){
-       getE();
+       Echeck();
+       Lcheck(x);
+    }
+   public boolean Lcheck(String x){
+       if(Level==2){
+           if(Greenfoot.isKeyDown(x)==true){
+               L= true;
+            }
+           else{
+               L= false;
+            }
+        }
+       return L;
     }
    public void minusE(){
        numE=numE-1;
@@ -61,7 +76,7 @@ public class Background extends World
             }
         }
     }
-   public void getE(){
+   public void Echeck(){
        if(numE==0){
            Level++;
            Erespawn();
@@ -84,8 +99,8 @@ public class Background extends World
    public void Erespawn(){
        if(Level==2){
            setBackground(new GreenfootImage("level2text.png"));
-           while(R1==false){
-              if(Greenfoot.isKeyDown("2")==true||R1==true){
+           //while(R1==false){
+              if(Lcheck("2")==true||R1==true){
                   setBackground(new GreenfootImage("space.jpg"));
                   for(int i= 1; i<9; i++){
                        addObject(new Type1(), 50*i, 200);
@@ -97,7 +112,7 @@ public class Background extends World
                        addObject(new Type2(), (75*i)+75, 100);
                    }
                 }
-            }
+           // }
         }
        if(Level==3){
            setBackground(new GreenfootImage("level3text.png"));
@@ -119,14 +134,17 @@ public class Background extends World
         }
        if(Level==4){
            setBackground(new GreenfootImage("level3text.png"));
-           while(R3==false){
+           //while(R3==false){
                if(Greenfoot.isKeyDown("b")==true||R3==true){
                    R3=true;
                    setBackground(new GreenfootImage("space.jpg"));
                    addObject(new Boss(), 250, 50);
                 }
-            }
+           // }
         }
+    }
+   public void minusBHP(){
+       BHP=BHP-1;
     }
    public void GameOver(){
        
