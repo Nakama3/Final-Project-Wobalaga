@@ -28,7 +28,9 @@ public abstract class Enemy extends Actor
        //move(0);
     }     
     public void shoot(Actor z){
-        for(int x=0; x<100; x++){
+        double m = Math.random()*10;
+        int n = (int)m;
+        if(n==5){
             for(int i=0; i<3; i++){
                 getWorld().addObject(z, getX(), getY()+16);
             }

@@ -1,12 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo
 public class Player extends Actor
 {
+    public boolean down=true;
     public void act() 
     {
         move();
         shoot();
     }    
-    public void move()//The movement of the bar
+    public void move()
     {
         if (Greenfoot.isKeyDown("left"))
        {
@@ -26,8 +27,12 @@ public class Player extends Actor
        }
     }
     public void shoot(){
-        if(Greenfoot.isKeyDown("space")){
+        if(Greenfoot.isKeyDown("space")==true&& down==true){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
+            down = false;
         }
+        if(Greenfoot.isKeyDown("space")==false){
+                down=true;
+            }
     }
 }

@@ -11,7 +11,6 @@ public class EBullet extends Actor
          if(getOneIntersectingObject(Player.class)!=null){
              removeTouching(Player.class);
              ((Background)getWorld()).minusLives();
-             getWorld().removeObject(this);
              hit = true;
            }
          if(hit == false && getY()>700){

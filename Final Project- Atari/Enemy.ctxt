@@ -1,8 +1,9 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ act()
-comment1.params=x\ y
-comment1.target=void\ spawnMove(int,\ int)
-comment2.params=z
-comment2.target=void\ shoot(greenfoot.Actor)
-numComments=3
+comment0.target=Enemy
+comment1.params=
+comment1.target=void\ act()
+comment2.params=x\ y
+comment2.target=void\ spawnMove(int,\ int)
+comment3.params=z
+comment3.target=void\ shoot(greenfoot.Actor)
+numComments=4
