@@ -14,11 +14,11 @@ public class PBullet extends Actor
              getWorld().removeObject(this);
              hit = true;
            }
-         if(getOneIntersectingObject(Boss.class)!=null){
+         /*if(getOneIntersectingObject(Boss.class)!=null){
              ((Background)getWorld()).minusBHP();
              getWorld().removeObject(this);
              hit = true;
-           }
+         */  
          if(hit == false && getY()<5){
              getWorld().removeObject(this);
             }
