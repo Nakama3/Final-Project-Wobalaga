@@ -5,11 +5,12 @@ public class Background extends World
    int W = 500;
    int row;
    int Lives = 3;
-   int Level = 1;
+   int Level = 0;
    int numE;
    int BHP;
    boolean hit;
-   boolean R = false;
+   boolean S = false;
+   boolean R = true;
    boolean R1 = false;
    boolean R2 = false;
    boolean R3 = false;
@@ -17,28 +18,11 @@ public class Background extends World
    String x = new String();
     public Background(){    
         super(500, 710, 1);
-       setBackground(new GreenfootImage("startscreen.png"));
-       //if(Greenfoot.isKeyDown("s")==true||R==true){
-           R=true;
-           setBackground(new GreenfootImage("level1text.png"));
-          // if(Greenfoot.isKeyDown("1")==true||R1==true){
-               numE=10;
-               setBackground(new GreenfootImage("space.jpg"));
-               for(int i= 1; i<7; i++){
-                   addObject(new Type1(),75*i , 200);
-                }
-               for(int i= 1; i<5; i++){
-                    addObject(new Type1(),(75*i)+75, 300);
-               }
-               addObject(new Player(), 250,670);   
-               addObject(new Life1(), 50, 50);
-               addObject(new Life2(), 100, 50);
-           // }
-        //}
    }
    public void act(){
        Echeck();
        Lcheck();
+       Scheck();
     }
    public void minusE(){
        numE=numE-1;
@@ -66,7 +50,7 @@ public class Background extends World
         }
     }
    public void Echeck(){
-       if(numE==0){
+       if(numE==0&&S==true){
            Level++;
            if(Level==2){
                numE=18;
@@ -80,17 +64,42 @@ public class Background extends World
             }
         }
     }
+   public void Scheck(){
+       if(Level==0&&R==true){
+           setBackground(new GreenfootImage("startscreen.png"));
+           if(Greenfoot.isKeyDown("s")){
+               Level++;
+               R=false;
+               addObject(new Player(), 250, 670);
+               addObject(new Life1(), 50, 50);
+               addObject(new Life2(), 100, 50);
+               S=true;
+            }
+        }
+    }
    public void Lcheck(){
+       if(Level==1&&R1==true){
+           setBackground(new GreenfootImage("level1text.png"));
+           if(Greenfoot.isKeyDown("1")){
+               Erespawn();
+               R1=false;
+            }
+        }
        if(Level==2&&R2==true){
-           setBackground(new GreenfootImage("space.jpg"));
+           setBackground(new GreenfootImage("level2text.png"));
            if(Greenfoot.isKeyDown("2")){
                Erespawn();
                R2=false;
             }
         }
-    }
-            
-           
+       if(Level==3&&R3==true){
+           setBackground(new GreenfootImage("level3text.png"));
+           if(Greenfoot.isKeyDown("3")){
+               Erespawn();
+               R3=false;
+            }
+        }
+    }           
    public void Prespawn(){
        removeObjects(getObjects(EBullet.class));
        removeObjects(getObjects(PBullet.class));
@@ -98,8 +107,6 @@ public class Background extends World
     }
    public void Erespawn(){
        if(Level==1){
-              if(Greenfoot.isKeyDown("3")==true||R2==true){
-                   R2=true;
                    setBackground(new GreenfootImage("space.jpg"));
                    for(int i= 1; i<7; i++){
                        addObject(new Type1(), 75*i, 200);
@@ -110,13 +117,8 @@ public class Background extends World
                    for(int i= 1; i<5; i++){
                        addObject(new Type2(), (75*i)+75, 100);
                     }
-                }
-        }
+            }
        if(Level==2){
-           setBackground(new GreenfootImage("level2text.png"));
-           //while(R1==false){
-              while(Greenfoot.isKeyDown("2")==true||R1==true){
-                  R1=true;
                   setBackground(new GreenfootImage("space.jpg"));
                   for(int i= 1; i<9; i++){
                        addObject(new Type1(), 50*i, 200);
@@ -127,14 +129,8 @@ public class Background extends World
                   for(int i= 1; i<5; i++){
                        addObject(new Type2(), (75*i)+75, 100);
                    }
-              }
-           // }
         }
        if(Level==3){
-           setBackground(new GreenfootImage("level3text.png"));
-           //while(R2==false){
-              if(Greenfoot.isKeyDown("3")==true||R2==true){
-                   R2=true;
                    setBackground(new GreenfootImage("space.jpg"));
                    for(int i= 1; i<7; i++){
                        addObject(new Type1(), 75*i, 200);
@@ -145,18 +141,10 @@ public class Background extends World
                    for(int i= 1; i<5; i++){
                        addObject(new Type2(), (75*i)+75, 100);
                     }
-                }
-           // }
         }
        if(Level==4){
-           setBackground(new GreenfootImage("level3text.png"));
-           //while(R3==false){
-               if(Greenfoot.isKeyDown("b")==true||R3==true){
-                   R3=true;
                    setBackground(new GreenfootImage("space.jpg"));
                    addObject(new Boss(), 250, 50);
-                }
-           // }
         }
     }
    public void minusBHP(){
