@@ -3,4 +3,6 @@ comment0.target=Type2
 comment1.params=
 comment1.target=void\ act()
 comment1.text=public\ Type2(int\ x,\ int\ y){\n\ \ \ \ \ \ \ \ super(x,\ y);\n}
-numComments=2
+comment2.params=
+comment2.target=void\ Attack()
+numComments=3

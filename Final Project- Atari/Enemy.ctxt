@@ -6,4 +6,6 @@ comment2.params=x\ y
 comment2.target=void\ spawnMove(int,\ int)
 comment3.params=z
 comment3.target=void\ shoot(greenfoot.Actor)
-numComments=4
+comment4.params=
+comment4.target=void\ swim()
+numComments=5

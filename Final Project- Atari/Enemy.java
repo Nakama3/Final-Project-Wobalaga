@@ -7,7 +7,9 @@ public abstract class Enemy extends Actor
     public int w = 500;
     public int h = 712;
     public boolean ready = false;
+    public boolean pos = false;
     public boolean a = false;
+    
     public void act() 
     {
         //spawnMove(x,y);
@@ -34,6 +36,18 @@ public abstract class Enemy extends Actor
             for(int i=0; i<3; i++){
                 getWorld().addObject(z, getX(), getY()+16);
             }
+        }
+    }
+    public void swim(){
+        int i=5;
+        if(getX()!=getX()-i&&pos==false){
+            move(-1);
+            i--;
+        }
+        int j=5;
+        if(getX()!=getX()+j&&pos==true){
+            move(-1);
+            i--;
         }
     }
 }

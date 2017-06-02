@@ -23,7 +23,6 @@ public class Background extends World
                setBackground(new GreenfootImage("space.jpg"));
                for(int i= 1; i<7; i++){
                    addObject(new Type1(),75*i , 200);
-
                 }
                for(int i= 1; i<5; i++){
                     addObject(new Type1(),(75*i)+75, 300);
@@ -85,43 +84,47 @@ public class Background extends World
    public void Erespawn(){
        if(Level==2){
            setBackground(new GreenfootImage("level2text.png"));
-           while(Greenfoot.isKeyDown("2")==false){
-               setBackground(new GreenfootImage("level2text.png"));
+           while(R1==false){
+              if(Greenfoot.isKeyDown("2")==true||R1==true){
+                  setBackground(new GreenfootImage("space.jpg"));
+                  for(int i= 1; i<9; i++){
+                       addObject(new Type1(), 50*i, 200);
+                   }
+                  for(int i= 1; i<7; i++){
+                       addObject(new Type1(), (50*i)+50, 300);
+                   }
+                  for(int i= 1; i<5; i++){
+                       addObject(new Type2(), (75*i)+75, 100);
+                   }
+                }
             }
-              setBackground(new GreenfootImage("space.jpg"));
-              for(int i= 1; i<7; i++){
-                   addObject(new Type1(), 75*i, 200);
-               }
-              for(int i= 1; i<5; i++){
-                   addObject(new Type1(), (75*i)+75, 300);
-               }
-              for(int i= 1; i<5; i++){
-                   addObject(new Type2(), (75*i)+75, 100);
-               }
-            
         }
        if(Level==3){
            setBackground(new GreenfootImage("level3text.png"));
-           if(Greenfoot.isKeyDown("3")==true||R2==true){
-               R2=true;
-               setBackground(new GreenfootImage("space.jpg"));
-               for(int i= 1; i<7; i++){
-                   addObject(new Type1(), 75*i, 200);
+           //while(R2==false){
+              if(Greenfoot.isKeyDown("3")==true||R2==true){
+                   R2=true;
+                   setBackground(new GreenfootImage("space.jpg"));
+                   for(int i= 1; i<7; i++){
+                       addObject(new Type1(), 75*i, 200);
+                    }
+                   for(int i= 1; i<5; i++){
+                       addObject(new Type1(), (75*i)+75, 300);
+                    }
+                   for(int i= 1; i<5; i++){
+                       addObject(new Type2(), (75*i)+75, 100);
+                    }
                 }
-               for(int i= 1; i<5; i++){
-                   addObject(new Type1(), (75*i)+75, 300);
-                }
-               for(int i= 1; i<5; i++){
-                   addObject(new Type2(), (75*i)+75, 100);
-                }
-            }
+           // }
         }
        if(Level==4){
            setBackground(new GreenfootImage("level3text.png"));
-           if(Greenfoot.isKeyDown("b")==true||R2==true){
-               R2=true;
-               setBackground(new GreenfootImage("space.jpg"));
-               addObject(new Boss(), 250, 50);
+           while(R3==false){
+               if(Greenfoot.isKeyDown("b")==true||R3==true){
+                   R3=true;
+                   setBackground(new GreenfootImage("space.jpg"));
+                   addObject(new Boss(), 250, 50);
+                }
             }
         }
     }
