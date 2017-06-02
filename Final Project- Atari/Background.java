@@ -52,6 +52,10 @@ public class Background extends World
    public void Echeck(){
        if(numE==0&&S==true){
            Level++;
+           if(Level==1){
+               numE=10;
+               R1=true;
+            }
            if(Level==2){
                numE=18;
                R2=true;
@@ -68,7 +72,6 @@ public class Background extends World
        if(Level==0&&R==true){
            setBackground(new GreenfootImage("startscreen.png"));
            if(Greenfoot.isKeyDown("s")){
-               Level++;
                R=false;
                addObject(new Player(), 250, 670);
                addObject(new Life1(), 50, 50);
@@ -113,9 +116,6 @@ public class Background extends World
                     }
                    for(int i= 1; i<5; i++){
                        addObject(new Type1(), (75*i)+75, 300);
-                    }
-                   for(int i= 1; i<5; i++){
-                       addObject(new Type2(), (75*i)+75, 100);
                     }
             }
        if(Level==2){
