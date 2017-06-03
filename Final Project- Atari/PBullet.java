@@ -2,11 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PBullet extends Actor
 {
     public boolean hit=false;
-    Boss boss= new Boss();
     public void act(){
         Shot();
     }
     public void Shot(){
+         Actor boss = (Actor)getWorld().getObjects(Boss.class).get(0);
+         BHPm() = boss.HPd();
          turnTowards(getX(),0);
          move(5);
          if(hit==false&&getOneIntersectingObject(Enemy.class)!=null){
@@ -16,8 +17,8 @@ public class PBullet extends Actor
              hit = true;
            }
          if(hit==false&&getOneIntersectingObject(Boss.class)!=null){
-             boss.HPd();
              remove();
+             BHPm();
              hit = true;
            }
          if(hit == false && getY()<5){

@@ -89,6 +89,8 @@ public class Background extends World
    public void Lcheck(){
        if(Level==1&&R1==true){
            setBackground(new GreenfootImage("level1text.png"));
+           removeObjects(getObjects(EBullet.class));
+           removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("1")){
                Erespawn();
                R1=false;
@@ -96,6 +98,8 @@ public class Background extends World
         }
        if(Level==2&&R2==true){
            setBackground(new GreenfootImage("level2text.png"));
+           removeObjects(getObjects(EBullet.class));
+           removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("2")){
                Erespawn();
                R2=false;
@@ -103,6 +107,8 @@ public class Background extends World
         }
        if(Level==3&&R3==true){
            setBackground(new GreenfootImage("level3text.png"));
+           removeObjects(getObjects(EBullet.class));
+           removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("3")){
                Erespawn();
                R3=false;
@@ -110,6 +116,8 @@ public class Background extends World
         }
        if(Level==4&&RB==true){
            setBackground(new GreenfootImage("level3text.png"));
+           removeObjects(getObjects(EBullet.class));
+           removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("b")){
                Erespawn();
                RB=false;
@@ -167,6 +175,9 @@ public class Background extends World
        boss.HP--;
     }
    public void GameOver(){
-       
+       removeObjects(getObjects(EBullet.class));
+       removeObjects(getObjects(PBullet.class));
+       removeObjects(getObjects(Enemy.class));
+       removeObjects(getObjects(Player.class));
     }
 }

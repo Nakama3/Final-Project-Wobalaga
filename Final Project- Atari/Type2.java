@@ -2,15 +2,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Type2 extends Enemy{
     public int x;
     public int y;
-    BType2 z = new BType2();
     public void act(){
-        //Attack();
+        Attack();
         //shoot(z);
     }
     public void Attack(){
-        double m = Math.random()*20;
-        int n = (int)m;
-                move(1);
-                turnTowards(new Player().getX(), new Player().getY());
+        Actor player = (Actor)((Background)getWorld()).getObjects(Player.class).get(0);
+        int playerx = player.getX();
+        int playery = player.getY();
+        move(5);
+        turnTowards(playerx, playery);
     }
 }
