@@ -6,8 +6,6 @@ public class PBullet extends Actor
         Shot();
     }
     public void Shot(){
-         Actor boss = (Actor)getWorld().getObjects(Boss.class).get(0);
-         BHPm() = boss.HPd();
          turnTowards(getX(),0);
          move(5);
          if(hit==false&&getOneIntersectingObject(Enemy.class)!=null){
@@ -17,8 +15,8 @@ public class PBullet extends Actor
              hit = true;
            }
          if(hit==false&&getOneIntersectingObject(Boss.class)!=null){
+             Actor boss = (Actor)getWorld().getObjects(Boss.class);
              remove();
-             BHPm();
              hit = true;
            }
          if(hit == false && getY()<5){

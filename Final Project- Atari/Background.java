@@ -148,7 +148,7 @@ public class Background extends World
                        addObject(new Type1(), (50*i)+50, 200);
                    }
                   for(int i= 1; i<5; i++){
-                       addObject(new Type2(), (75*i)+75, 100);
+                       addObject(new Type2((75*i)+75,100), (75*i)+75, 100);
                    }
         }
        if(Level==3){
@@ -160,7 +160,7 @@ public class Background extends World
                        addObject(new Type1(), (75*i)+75, 300);
                     }
                    for(int i= 1; i<7; i++){
-                       addObject(new Type2(), (75*i)+75, 200);
+                       addObject(new Type2((75*i)+75, 200), (75*i)+75, 200);
                     }
                    for(int i= 1; i<5; i++){
                        addObject(new Type3(), (75*i)+75, 100);
