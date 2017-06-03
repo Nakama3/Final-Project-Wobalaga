@@ -1,19 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class BBullet here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class BBullet extends Actor
 {
-    /**
-     * Act - do whatever the BBullet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    public boolean hit = false;
+    public void act(){
+        Shot();
+    }
+    public void Shot(){ //when called moves towards bottom of screen and if hits player subtracts lives
+         setRotation(90);
+         move(5);
+         if(getOneIntersectingObject(Player.class)!=null){
+             removeTouching(Player.class);
+             ((Background)getWorld()).minusLives();
+             hit = true;
+           }
+         if(hit == false && getY()>700){
+             getWorld().removeObject(this);
+            }
+        } 
 }

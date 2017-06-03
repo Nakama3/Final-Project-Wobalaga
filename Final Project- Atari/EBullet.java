@@ -5,7 +5,7 @@ public class EBullet extends Actor
     public void act(){
         Shot();
     }
-    public void Shot(){
+    public void Shot(){ //when called checks if hit player, or it goes away when at end of screen
          setRotation(90);
          move(2);
          if(getOneIntersectingObject(Player.class)!=null){

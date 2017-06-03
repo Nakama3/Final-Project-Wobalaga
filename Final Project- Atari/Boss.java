@@ -3,16 +3,16 @@ public class Boss extends Actor
 {
     public int HP=1;
     public int timer=40;
-    public int x = 1;
-    public boolean pos=true;
+    public boolean pos=true; //is the direction positive?
     BBullet z = new BBullet();
     public void act() 
     {
         swimp();
         swimn();
         Dcheck();
+        shoot(z);
     }
-    public void swimp(){
+    public void swimp(){ //swim in the pos direction for 40 frames then go neg
         if(pos==true){    
             move(1);
             if(timer>0){
@@ -24,7 +24,7 @@ public class Boss extends Actor
             }
         }
     }
-    public void swimn(){
+    public void swimn(){ //swim in the neg direction for 40 frames then go pos
         if(pos==false){    
             move(-1);
             if(timer<100){
@@ -36,19 +36,16 @@ public class Boss extends Actor
             }
         }
     }
-    public void shoot(Actor z){
-        double m = Math.random()*15;
-        int n = (int)m;
-        if(n==5){
-            for(int i=0; i<3; i++){
+    public void shoot(Actor z){ //shoot a bullet
+        
                 getWorld().addObject(z, getX(), getY()+16);
-            }
-        }
+            
+        
     }
-    public void HPd(){
+    public void HPd(){ // minus 1 HP
         HP--;
     }
-    public void Dcheck(){
+    public void Dcheck(){ //when HP=0, remove
         if(HP==0){
             getWorld().removeObject(this);
         }

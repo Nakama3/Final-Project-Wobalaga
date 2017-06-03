@@ -1,23 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Background extends World
 {
-   int H = 710;
+   int H = 710;// Instance variables
    int W = 500;
    int row;
    int Lives = 3;
    int Level = 0;
    int numE;
-   int BHP;
+   int BHP; //Boss health
    boolean hit;
-   boolean S = false;
-   boolean R = true;
-   boolean R1 = false;
-   boolean R2 = false;
-   boolean R3 = false;
-   boolean RB = false;
-   boolean L;
-   Boss boss = new Boss();
-    public Background(){    
+   boolean S = false; //start game?
+   boolean R = true;  //game startted?
+   boolean R1 = false; //Level 1 started?
+   boolean R2 = false; //Level 2 started?
+   boolean R3 = false; //Level 3 started?
+   boolean RB = false; //Boss Level started?
+    public Background(){    //Background dimensions
         super(500, 710, 1);
    }
    public void act(){
@@ -25,13 +23,13 @@ public class Background extends World
        Lcheck();
        Scheck();
     }
-   public int getL(){
+   public int getL(){ //returns level
        return Level;
     }
-   public void minusE(){
+   public void minusE(){ //decrements enemy count
        numE=numE-1;
     }
-   public void minusLives(){
+   public void minusLives(){ //decrements lives if player is hit
        hit=true; 
        if(hit=true){
            if(Lives==3&&hit==true){
@@ -46,15 +44,15 @@ public class Background extends World
                Prespawn();
                hit=false;
             }
-           if(Lives==1&&hit==true){
+           if(Lives==1&&hit==true){ //game over if all lives are lost
                Lives--;
                GameOver();
                hit=false;
             }
         }
     }
-   public void Echeck(){
-       if(numE==0&&S==true){
+   public void Echeck(){ //checks if there are enemies in game. If not increase level
+       if(numE==0&&S==true){ //and go to the corresponding level start screen
            Level++;
            if(Level==1){
                numE=10;
@@ -74,7 +72,7 @@ public class Background extends World
             }
         }
     }
-   public void Scheck(){
+   public void Scheck(){ //checks if the player starts the game by pressing "s"
        if(Level==0&&R==true){
            setBackground(new GreenfootImage("startscreen.png"));
            if(Greenfoot.isKeyDown("s")){
@@ -86,7 +84,7 @@ public class Background extends World
             }
         }
     }
-   public void Lcheck(){
+   public void Lcheck(){ //clears the screen and waits for input to start the level
        if(Level==1&&R1==true){
            setBackground(new GreenfootImage("level1text.png"));
            removeObjects(getObjects(EBullet.class));
@@ -124,13 +122,13 @@ public class Background extends World
             }
         }
     }           
-   public void Prespawn(){
+   public void Prespawn(){ //the player respawn, removing bullets to have a safe spawn
        removeObjects(getObjects(EBullet.class));
        removeObjects(getObjects(PBullet.class));
        addObject(new Player(), 250, 670);
     }
-   public void Erespawn(){
-       if(Level==1){
+   public void Erespawn(){ //called when level starts, depending on level spawns
+       if(Level==1){       //different types/amounts of enemies
                    setBackground(new GreenfootImage("space.jpg"));
                    for(int i= 1; i<7; i++){
                        addObject(new Type1(), 75*i, 300);
@@ -171,13 +169,11 @@ public class Background extends World
                    addObject(new Boss(), 250, 50);
         }
     }
-   public void minusBHP(){
-       boss.HP--;
-    }
-   public void GameOver(){
-       removeObjects(getObjects(EBullet.class));
+   public void GameOver(){ //if game over removes every object and displays game over 
+       removeObjects(getObjects(EBullet.class)); //screen (didn't finish screen image)
        removeObjects(getObjects(PBullet.class));
        removeObjects(getObjects(Enemy.class));
        removeObjects(getObjects(Player.class));
+       //setBackground(new GreenfootImage("Gameover.jpg");
     }
 }
