@@ -8,6 +8,6 @@ public class Type3 extends Enemy{
     }*/
     public void act(){
         //spawnMove(x,y);
-        shoot(z);
+        //shoot(z);
     }
 }

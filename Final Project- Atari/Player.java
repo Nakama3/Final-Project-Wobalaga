@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo
 public class Player extends Actor
 {
+    public int cool;
     public boolean down=true;
-    public void act() 
-    {
+    public void act(){
         move();
-        shoot();
+        //shoot();
+        beam();
     }    
-    public void move()
-    {
+    public void move(){
         if (Greenfoot.isKeyDown("left"))
        {
            move (-3);
@@ -30,9 +30,20 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("space")==true&& down==true){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
             down = false;
+            cool=15;
         }
         if(Greenfoot.isKeyDown("space")==false){
-                down=true;
+            if(cool>0){
+                cool--;
+                if(cool==0){
+                    down=true;
+                }
             }
+        }
+    }
+    public void beam(){
+        if(Greenfoot.isKeyDown("space")){
+            getWorld().addObject(new PBullet(), getX(), getY()-16);
+        }
     }
 }

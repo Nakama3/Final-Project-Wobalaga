@@ -14,8 +14,9 @@ public class Background extends World
    boolean R1 = false;
    boolean R2 = false;
    boolean R3 = false;
+   boolean RB = false;
    boolean L;
-   String x = new String();
+   Boss boss = new Boss();
     public Background(){    
         super(500, 710, 1);
    }
@@ -23,6 +24,9 @@ public class Background extends World
        Echeck();
        Lcheck();
        Scheck();
+    }
+   public int getL(){
+       return Level;
     }
    public void minusE(){
        numE=numE-1;
@@ -62,9 +66,11 @@ public class Background extends World
             }
            if(Level==3){
                numE=24;
+               R3=true;
             }
            if(Level==4){
                numE=1;
+               RB=true;
             }
         }
     }
@@ -102,6 +108,13 @@ public class Background extends World
                R3=false;
             }
         }
+       if(Level==4&&RB==true){
+           setBackground(new GreenfootImage("level3text.png"));
+           if(Greenfoot.isKeyDown("b")){
+               Erespawn();
+               RB=false;
+            }
+        }
     }           
    public void Prespawn(){
        removeObjects(getObjects(EBullet.class));
@@ -112,19 +125,19 @@ public class Background extends World
        if(Level==1){
                    setBackground(new GreenfootImage("space.jpg"));
                    for(int i= 1; i<7; i++){
-                       addObject(new Type1(), 75*i, 200);
+                       addObject(new Type1(), 75*i, 300);
                     }
                    for(int i= 1; i<5; i++){
-                       addObject(new Type1(), (75*i)+75, 300);
+                       addObject(new Type1(), (75*i)+75, 200);
                     }
             }
        if(Level==2){
                   setBackground(new GreenfootImage("space.jpg"));
                   for(int i= 1; i<9; i++){
-                       addObject(new Type1(), 50*i, 200);
+                       addObject(new Type1(), 50*i, 300);
                    }
                   for(int i= 1; i<7; i++){
-                       addObject(new Type1(), (50*i)+50, 300);
+                       addObject(new Type1(), (50*i)+50, 200);
                    }
                   for(int i= 1; i<5; i++){
                        addObject(new Type2(), (75*i)+75, 100);
@@ -132,14 +145,17 @@ public class Background extends World
         }
        if(Level==3){
                    setBackground(new GreenfootImage("space.jpg"));
-                   for(int i= 1; i<7; i++){
-                       addObject(new Type1(), 75*i, 200);
+                   for(int i= 1; i<9; i++){
+                       addObject(new Type1(), 75*i, 400);
                     }
-                   for(int i= 1; i<5; i++){
+                   for(int i= 1; i<7; i++){
                        addObject(new Type1(), (75*i)+75, 300);
                     }
+                   for(int i= 1; i<7; i++){
+                       addObject(new Type2(), (75*i)+75, 200);
+                    }
                    for(int i= 1; i<5; i++){
-                       addObject(new Type2(), (75*i)+75, 100);
+                       addObject(new Type3(), (75*i)+75, 100);
                     }
         }
        if(Level==4){
@@ -148,7 +164,7 @@ public class Background extends World
         }
     }
    public void minusBHP(){
-       BHP=BHP-1;
+       boss.HP--;
     }
    public void GameOver(){
        

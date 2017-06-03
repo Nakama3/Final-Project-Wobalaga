@@ -1,5 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ act()
-comment0.text=public\ Type1(int\ x,\ int\ y){\r\n\ \ \ \ \ \ \ \ super(x,\ y);\r\n}
-numComments=1
+comment0.target=Type1
+comment1.params=
+comment1.target=void\ act()
+comment1.text=public\ Type1(int\ x,\ int\ y){\n\ \ \ \ \ \ \ \ super(x,\ y);\n}
+numComments=2

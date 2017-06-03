@@ -6,15 +6,10 @@ public abstract class Enemy extends Actor
     EBullet z = new EBullet();
     public int w = 500;
     public int h = 712;
+    public int timer=50;
     public boolean ready = false;
-    public boolean pos = false;
+    public boolean pos = true;
     public boolean a = false;
-    
-    public void act() 
-    {
-        //spawnMove(x,y);
-        shoot(z);
-    }
     public void spawnMove(int x, int y){
        if(getX()!=w/2&&getY()!=h/2&&a==false){ 
             turnTowards(w/2,h/2);
@@ -27,10 +22,9 @@ public abstract class Enemy extends Actor
             turnTowards(x,y);
             move(3);
         }
-       //move(0);
     }     
     public void shoot(Actor z){
-        double m = Math.random()*10;
+        double m = Math.random()*15;
         int n = (int)m;
         if(n==5){
             for(int i=0; i<3; i++){
@@ -38,16 +32,28 @@ public abstract class Enemy extends Actor
             }
         }
     }
-    public void swim(){
-        int i=5;
-        if(getX()!=getX()-i&&pos==false){
-            move(-1);
-            i--;
+    public void swimp(){
+        if(pos==true){    
+            move(1);
+            if(timer>0){
+                timer--;
+                if(timer==0){
+                    swimn();
+                    pos=false;
+                }
+            }
         }
-        int j=5;
-        if(getX()!=getX()+j&&pos==true){
+    }
+    public void swimn(){
+        if(pos==false){    
             move(-1);
-            i--;
+            if(timer<100){
+                timer++;
+                if(timer==100){
+                    swimp();
+                    pos=true;
+                }
+            }
         }
     }
 }
