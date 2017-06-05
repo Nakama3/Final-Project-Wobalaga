@@ -5,7 +5,7 @@ public class Player extends Actor
     public boolean down=true; //spacebar pressed?
     public void act(){
         move();
-        //shoot();
+        shoot();
         beam();
     }    
     public void move(){ //player movement controls
@@ -42,7 +42,7 @@ public class Player extends Actor
         }
     }
     public void beam(){ //just so that it can be a bit easier, shoots a bullet every frame
-        if(Greenfoot.isKeyDown("space")){
+        if(Greenfoot.isKeyDown("w")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }

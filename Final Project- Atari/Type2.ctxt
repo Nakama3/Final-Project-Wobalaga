@@ -1,11 +1,10 @@
 #BlueJ class context
-comment0.target=Type2
-comment1.params=x\ y
-comment1.target=Type2(int,\ int)
+comment0.params=x\ y
+comment0.target=Type2(int,\ int)
+comment1.params=
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ Attack()
 comment3.params=
-comment3.target=void\ Attack()
-comment4.params=
-comment4.target=void\ Spawncheck()
-numComments=5
+comment3.target=void\ Spawncheck()
+numComments=4

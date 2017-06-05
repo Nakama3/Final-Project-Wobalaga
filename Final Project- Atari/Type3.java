@@ -7,7 +7,7 @@ public class Type3 extends Enemy{
         super(x, y);
     }*/
     public void act(){
-        //shoot(z);
+        shoot(z);
         swimp();
         swimn();
     }

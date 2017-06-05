@@ -7,7 +7,7 @@ public class Background extends World
    int Lives = 3;
    int Level = 0;
    int numE;
-   int BHP; //Boss health
+   int BHP=5000; //Boss health
    boolean hit;
    boolean S = false; //start game?
    boolean R = true;  //game startted?
@@ -17,6 +17,8 @@ public class Background extends World
    boolean RB = false; //Boss Level started?
     public Background(){    //Background dimensions
         super(500, 710, 1);
+        setPaintOrder(Player.class, Boss.class, Type1.class, Type2.class, Type3.class, PBullet.class, BBullet.class, Directions.class, BType1.class, BType2.class, BType3.class, Life1.class, Life2.class, Space.class);
+
    }
    public void act(){
        Echeck();
@@ -28,6 +30,9 @@ public class Background extends World
     }
    public void minusE(){ //decrements enemy count
        numE=numE-1;
+    }
+   public void minusBHP(){
+       BHP--;
     }
    public void minusLives(){ //decrements lives if player is hit
        hit=true; 
@@ -129,7 +134,7 @@ public class Background extends World
     }
    public void Erespawn(){ //called when level starts, depending on level spawns
        if(Level==1){       //different types/amounts of enemies
-                   setBackground(new GreenfootImage("space.jpg"));
+                   setBackground(new GreenfootImage("space.gif"));
                    for(int i= 1; i<7; i++){
                        addObject(new Type1(), 75*i, 300);
                     }
@@ -138,7 +143,7 @@ public class Background extends World
                     }
             }
        if(Level==2){
-                  setBackground(new GreenfootImage("space.jpg"));
+                  setBackground(new GreenfootImage("space.gif"));
                   for(int i= 1; i<9; i++){
                        addObject(new Type1(), 50*i, 300);
                    }
@@ -150,7 +155,7 @@ public class Background extends World
                    }
         }
        if(Level==3){
-                   setBackground(new GreenfootImage("space.jpg"));
+                   setBackground(new GreenfootImage("space.gif"));
                    for(int i= 1; i<9; i++){
                        addObject(new Type1(), 75*i, 400);
                     }
@@ -165,8 +170,13 @@ public class Background extends World
                     }
         }
        if(Level==4){
-                   setBackground(new GreenfootImage("space.jpg"));
+                   setBackground(new GreenfootImage("space.gif"));
                    addObject(new Boss(), 250, 50);
+        }
+    }
+   public void Dcheck(){
+       if(BHP==0){
+           Win();
         }
     }
    public void GameOver(){ //if game over removes every object and displays game over 
@@ -175,5 +185,12 @@ public class Background extends World
        removeObjects(getObjects(Enemy.class));
        removeObjects(getObjects(Player.class));
        //setBackground(new GreenfootImage("Gameover.jpg");
+    }
+   public void Win(){ //if game over removes every object and displays win screen 
+       removeObjects(getObjects(EBullet.class)); //screen (didn't finish screen image)
+       removeObjects(getObjects(PBullet.class));
+       removeObjects(getObjects(Enemy.class));
+       removeObjects(getObjects(Player.class));
+       //setBackground(new GreenfootImage("win.jpg");
     }
 }

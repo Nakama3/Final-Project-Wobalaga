@@ -11,8 +11,8 @@ public class Type2 extends Enemy{
     }
     public void act(){
         //Attack();
-        //shoot(z);
-        Spawncheck();
+        shoot(z);
+        //Spawncheck();
     }
     public void Attack(){ // dashes at player
         Actor player = (Actor)((Background)getWorld()).getObjects(Player.class).get(0);

@@ -1,15 +1,10 @@
 #BlueJ class context
-comment0.target=Boss
+comment0.params=
+comment0.target=void\ act()
 comment1.params=
-comment1.target=void\ act()
+comment1.target=void\ swimp()
 comment2.params=
-comment2.target=void\ swimp()
-comment3.params=
-comment3.target=void\ swimn()
-comment4.params=z
-comment4.target=void\ shoot(greenfoot.Actor)
-comment5.params=
-comment5.target=void\ HPd()
-comment6.params=
-comment6.target=void\ Dcheck()
-numComments=7
+comment2.target=void\ swimn()
+comment3.params=z
+comment3.target=void\ shoot(greenfoot.Actor)
+numComments=4
