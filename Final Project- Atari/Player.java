@@ -66,12 +66,16 @@ public class Player extends Actor
         }
     }
     public void beam2(){ //just so that it can be a bit easier, shoots a bullet every frame
-        if(Greenfoot.isKeyDown("g")){
+        double m = Math.random()*9;
+        int n = (int)m;
+        if(Greenfoot.isKeyDown("n")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }
     public void beam3(){ //just so that it can be a bit easier, shoots a bullet every frame
-        if(Greenfoot.isKeyDown("i")){
+        double m = Math.random()*9;
+        int n = (int)m;
+        if(Greenfoot.isKeyDown("n")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }
