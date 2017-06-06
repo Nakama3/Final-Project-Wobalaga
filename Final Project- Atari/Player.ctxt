@@ -1,15 +1,16 @@
 #BlueJ class context
-comment0.target=Player
-comment1.params=move\ x\ F
-comment1.target=Player(int,\ int,\ boolean)
+comment0.params=move\ x\ F
+comment0.target=Player(int,\ int,\ boolean)
+comment1.params=
+comment1.target=void\ act()
 comment10.params=
 comment10.target=void\ beam5()
-comment2.params=
-comment2.target=void\ act()
-comment3.params=x\ F
-comment3.target=void\ set(int,\ boolean)
+comment2.params=x\ F
+comment2.target=void\ set(int,\ boolean)
+comment3.params=
+comment3.target=void\ move()
 comment4.params=
-comment4.target=void\ move()
+comment4.target=void\ set()
 comment5.params=
 comment5.target=void\ shoot()
 comment6.params=

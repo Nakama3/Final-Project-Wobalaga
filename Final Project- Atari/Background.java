@@ -3,17 +3,16 @@ public class Background extends World
 {
    int H = 710;// Instance variables
    int W = 500;
-   int row;
    int Lives = 3;
    int Level = 0;
-   int numE;
-   int BHP=500; //Boss health
+   int numE; // Amount of Enemies on screen
+   int BHP=1000; //Boss health
    int PM = 3;
    int Px;
    boolean PF = false;
    boolean hit;
    boolean S = false; //start game?
-   boolean R = true;  //game startted?
+   boolean R = true;  //game ready?
    boolean R1 = false; //Level 1 started?
    boolean R2 = false; //Level 2 started?
    boolean R3 = false; //Level 3 started?
@@ -31,10 +30,13 @@ public class Background extends World
    public int getL(){ //returns level
        return Level;
     }
+   public int getBHP(){
+       return BHP;
+    }
    public void minusE(){ //decrements enemy count
        numE=numE-1;
     }
-   public void minusBHP(){
+   public void minusBHP(){ // decrements boss HP
        BHP=BHP-1;
        if(BHP<=300){
            PM=0;
@@ -69,7 +71,7 @@ public class Background extends World
     }
    public void Echeck(){ //checks if there are enemies in game. If not increase level
        if(numE==0&&S==true&&F==false){ //and go to the corresponding level start screen
-           Level=Level+4;
+           Level=Level+1;
            if(Level==1){
                numE=10;
                R1=true;

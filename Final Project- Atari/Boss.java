@@ -6,11 +6,17 @@ public class Boss extends Actor
     public boolean pos=true; //is the direction positive?
     public void act() 
     {
-        //swimp();
-        //swimn();
+        if(((Background)getWorld()).getBHP()>300){
+            swimp();
+            swimn();
+        }
         beam();
         beam2();
         beam3();
+        if(((Background)getWorld()).getBHP()<300){
+            set();
+            beam4();
+        }
     }
     public void swimp(){ //swim in the pos direction for 40 frames then go neg
         if(pos==true){    
@@ -36,6 +42,9 @@ public class Boss extends Actor
             }
         }
     }
+    public void set(){
+        setLocation(250,getY());
+    }
     public void beam(){ //shoot a bullet         
             getWorld().addObject(new BBullet(), getX()-30, getY()+100);
     }
@@ -44,6 +53,9 @@ public class Boss extends Actor
     }
     public void beam3(){ //shoot a bullet         
             getWorld().addObject(new BBullet(), getX()+30, getY()+100);
+    }
+    public void beam4(){ //shoot a bullet         
+            getWorld().addObject(new BBullet(), getX(), getY()+100);
     }
     public void ST(){
         double n = Math.random()*300;

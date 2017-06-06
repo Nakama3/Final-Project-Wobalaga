@@ -1,7 +1,8 @@
 #BlueJ class context
-comment0.target=Background
+comment0.params=
+comment0.target=Background()
 comment1.params=
-comment1.target=Background()
+comment1.target=void\ act()
 comment10.params=
 comment10.target=void\ Prespawn()
 comment11.params=
@@ -11,9 +12,9 @@ comment12.target=void\ GameOver()
 comment13.params=
 comment13.target=void\ Win()
 comment2.params=
-comment2.target=void\ act()
+comment2.target=int\ getL()
 comment3.params=
-comment3.target=int\ getL()
+comment3.target=int\ getBHP()
 comment4.params=
 comment4.target=void\ minusE()
 comment5.params=

@@ -12,14 +12,20 @@ public class Player extends Actor
         this.F = F;
     }
     public void act(){
-        move();
-        set(x,F);
-        //shoot();
-        beam();
-        beam2();
-        beam3();
-        beam4();
-        beam5();
+        if(((Background)getWorld()).getBHP()>300){
+            move();
+        }
+        shoot();
+        if(((Background)getWorld()).getBHP()<300){
+            set();
+            beam4();
+            beam5();
+        }
+        if(((Background)getWorld()).getL()==4){
+            beam();
+            beam2();
+            beam3();
+        }
     }    
     public void set(int x, boolean F){
         if(F==true){
@@ -35,6 +41,9 @@ public class Player extends Actor
        {
            move (m);
        }
+    }
+    public void set(){
+        setLocation(250,getY());
     }
     public void shoot(){  //shoots abullet and waits 15 frames after the space has been
         if(Greenfoot.isKeyDown("space")==true&& down==true){//lifted to prevent beam()
@@ -57,13 +66,13 @@ public class Player extends Actor
         }
     }
     public void beam2(){ //just so that it can be a bit easier, shoots a bullet every frame
-        if(Greenfoot.isKeyDown("p")){
-            getWorld().addObject(new PBullet(), getX()-10, getY()-16);
+        if(Greenfoot.isKeyDown("g")){
+            getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }
     public void beam3(){ //just so that it can be a bit easier, shoots a bullet every frame
-        if(Greenfoot.isKeyDown("q")){
-            getWorld().addObject(new PBullet(), getX()+10, getY()-16);
+        if(Greenfoot.isKeyDown("i")){
+            getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }
     public void beam4(){ //just so that it can be a bit easier, shoots a bullet every frame

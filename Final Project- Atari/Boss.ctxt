@@ -1,11 +1,12 @@
 #BlueJ class context
-comment0.target=Boss
+comment0.params=
+comment0.target=void\ act()
 comment1.params=
-comment1.target=void\ act()
+comment1.target=void\ swimp()
 comment2.params=
-comment2.target=void\ swimp()
+comment2.target=void\ swimn()
 comment3.params=
-comment3.target=void\ swimn()
+comment3.target=void\ set()
 comment4.params=
 comment4.target=void\ beam()
 comment5.params=
@@ -13,5 +14,7 @@ comment5.target=void\ beam2()
 comment6.params=
 comment6.target=void\ beam3()
 comment7.params=
-comment7.target=void\ ST()
-numComments=8
+comment7.target=void\ beam4()
+comment8.params=
+comment8.target=void\ ST()
+numComments=9
