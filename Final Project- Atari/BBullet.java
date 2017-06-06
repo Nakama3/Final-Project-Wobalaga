@@ -8,13 +8,38 @@ public class BBullet extends Actor
     public void Shot(){ //when called moves towards bottom of screen and if hits player subtracts lives
          setRotation(90);
          move(5);
-         if(getOneIntersectingObject(Player.class)!=null){
+         if(hit==false&&getOneIntersectingObject(Player.class)!=null){
              removeTouching(Player.class);
              ((Background)getWorld()).minusLives();
+             remove();
              hit = true;
            }
-         if(hit == false && getY()>700){
-             getWorld().removeObject(this);
+         if(hit==false&&getOneIntersectingObject(PBullet.class)!=null){
+             removeTouching(PBullet.class);
+             remove();
+             hit = true;
+           }
+         if(hit==false&&getY()>700){
+             remove();
             }
-        } 
+    }
+    public void ShotL(){ //when called moves towards bottom of screen and if hits player subtracts lives
+         if(hit==false&&getOneIntersectingObject(Player.class)!=null){
+             removeTouching(Player.class);
+             ((Background)getWorld()).minusLives();
+             remove();
+             hit = true;
+           }
+         if(hit==false&&getOneIntersectingObject(PBullet.class)!=null){
+             removeTouching(PBullet.class);
+             remove();
+             hit = true;
+           }
+         if(hit==false&&getY()>700){
+             remove();
+            }
+    }
+    public void remove(){ //removes bullet to not overkill player
+        getWorld().removeObject(this);
+    }
 }

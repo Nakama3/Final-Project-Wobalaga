@@ -1,6 +1,11 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ act()
+comment0.target=BBullet
 comment1.params=
-comment1.target=void\ Shot()
-numComments=2
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ Shot()
+comment3.params=
+comment3.target=void\ ShotL()
+comment4.params=
+comment4.target=void\ remove()
+numComments=5

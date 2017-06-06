@@ -7,7 +7,10 @@ public class Background extends World
    int Lives = 3;
    int Level = 0;
    int numE;
-   int BHP=5000; //Boss health
+   int BHP=500; //Boss health
+   int PM = 3;
+   int Px;
+   boolean PF = false;
    boolean hit;
    boolean S = false; //start game?
    boolean R = true;  //game startted?
@@ -15,10 +18,10 @@ public class Background extends World
    boolean R2 = false; //Level 2 started?
    boolean R3 = false; //Level 3 started?
    boolean RB = false; //Boss Level started?
+   boolean F = false; //Final level started?
     public Background(){    //Background dimensions
         super(500, 710, 1);
         setPaintOrder(Player.class, Boss.class, Type1.class, Type2.class, Type3.class, PBullet.class, BBullet.class, Directions.class, BType1.class, BType2.class, BType3.class, Life1.class, Life2.class, Space.class);
-
    }
    public void act(){
        Echeck();
@@ -32,7 +35,15 @@ public class Background extends World
        numE=numE-1;
     }
    public void minusBHP(){
-       BHP--;
+       BHP=BHP-1;
+       if(BHP<=300){
+           PM=0;
+           Px=250;
+           PF=true;
+        }
+       if(BHP==0){
+           Win();
+        }
     }
    public void minusLives(){ //decrements lives if player is hit
        hit=true; 
@@ -57,8 +68,8 @@ public class Background extends World
         }
     }
    public void Echeck(){ //checks if there are enemies in game. If not increase level
-       if(numE==0&&S==true){ //and go to the corresponding level start screen
-           Level++;
+       if(numE==0&&S==true&&F==false){ //and go to the corresponding level start screen
+           Level=Level+4;
            if(Level==1){
                numE=10;
                R1=true;
@@ -72,8 +83,8 @@ public class Background extends World
                R3=true;
             }
            if(Level==4){
-               numE=1;
                RB=true;
+               F=true;
             }
         }
     }
@@ -82,7 +93,7 @@ public class Background extends World
            setBackground(new GreenfootImage("startscreen.png"));
            if(Greenfoot.isKeyDown("s")){
                R=false;
-               addObject(new Player(), 250, 670);
+               addObject(new Player(PM,Px,PF), 250, 670);
                addObject(new Life1(), 50, 50);
                addObject(new Life2(), 100, 50);
                S=true;
@@ -130,7 +141,7 @@ public class Background extends World
    public void Prespawn(){ //the player respawn, removing bullets to have a safe spawn
        removeObjects(getObjects(EBullet.class));
        removeObjects(getObjects(PBullet.class));
-       addObject(new Player(), 250, 670);
+       addObject(new Player(PM, Px, PF), 250, 670);
     }
    public void Erespawn(){ //called when level starts, depending on level spawns
        if(Level==1){       //different types/amounts of enemies
@@ -174,23 +185,26 @@ public class Background extends World
                    addObject(new Boss(), 250, 50);
         }
     }
-   public void Dcheck(){
-       if(BHP==0){
-           Win();
-        }
-    }
    public void GameOver(){ //if game over removes every object and displays game over 
        removeObjects(getObjects(EBullet.class)); //screen (didn't finish screen image)
        removeObjects(getObjects(PBullet.class));
+       removeObjects(getObjects(BBullet.class));
        removeObjects(getObjects(Enemy.class));
        removeObjects(getObjects(Player.class));
+       removeObjects(getObjects(Boss.class));
+       removeObjects(getObjects(Life1.class));
+       removeObjects(getObjects(Life2.class));
        //setBackground(new GreenfootImage("Gameover.jpg");
     }
    public void Win(){ //if game over removes every object and displays win screen 
        removeObjects(getObjects(EBullet.class)); //screen (didn't finish screen image)
        removeObjects(getObjects(PBullet.class));
+       removeObjects(getObjects(BBullet.class));
        removeObjects(getObjects(Enemy.class));
        removeObjects(getObjects(Player.class));
+       removeObjects(getObjects(Boss.class));
+       removeObjects(getObjects(Life1.class));
+       removeObjects(getObjects(Life2.class));
        //setBackground(new GreenfootImage("win.jpg");
     }
 }

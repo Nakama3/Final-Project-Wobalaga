@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PBullet extends Actor
 {
-    public boolean hit=false; //did the bullet hit something?
+    public boolean hit = false; //did the bullet hit something?
     public void act(){
         Shot();
     }
@@ -15,8 +15,12 @@ public class PBullet extends Actor
              hit = true;
            }
          if(hit==false&&getOneIntersectingObject(Boss.class)!=null){
-             Actor boss = (Actor)getWorld().getObjects(Boss.class).get(0);
              ((Background)getWorld()).minusBHP();
+             remove();
+             hit = true;
+           }
+         if(hit==false&&getOneIntersectingObject(BBullet.class)!=null){
+             removeTouching(BBullet.class);
              remove();
              hit = true;
            }

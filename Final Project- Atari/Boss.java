@@ -1,18 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Boss extends Actor
 {
-    public int timer=40;
+    public int timer=10;
+    public int Stimer=10;
     public boolean pos=true; //is the direction positive?
-    BBullet z = new BBullet();
     public void act() 
     {
-        swimp();
-        swimn();
-        shoot(z);
+        //swimp();
+        //swimn();
+        beam();
+        beam2();
+        beam3();
     }
     public void swimp(){ //swim in the pos direction for 40 frames then go neg
         if(pos==true){    
-            move(10);
+            move(20);
             if(timer>0){
                 timer--;
                 if(timer==0){
@@ -24,7 +26,7 @@ public class Boss extends Actor
     }
     public void swimn(){ //swim in the neg direction for 40 frames then go pos
         if(pos==false){    
-            move(-10);
+            move(-20);
             if(timer<100){
                 timer++;
                 if(timer==100){
@@ -34,7 +36,26 @@ public class Boss extends Actor
             }
         }
     }
-    public void shoot(Actor z){ //shoot a bullet
-         getWorld().addObject(z, getX(), getY()+16);
+    public void beam(){ //shoot a bullet         
+            getWorld().addObject(new BBullet(), getX()-30, getY()+100);
+    }
+    public void beam2(){ //shoot a bullet         
+            getWorld().addObject(new BBullet(), getX(), getY()+100);
+    }
+    public void beam3(){ //shoot a bullet         
+            getWorld().addObject(new BBullet(), getX()+30, getY()+100);
+    }
+    public void ST(){
+        double n = Math.random()*300;
+        double q = Math.random()*100;
+        int m = (int) n;
+        int p = (int) q;
+        if(Stimer>0){
+            Stimer--;
+        }
+        if(Stimer==0){
+            getWorld().addObject(new SType2(m+100, p+300),m+100, p+300);
+            Stimer=10;
+        }
     }
 }
