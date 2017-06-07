@@ -11,13 +11,13 @@ public class BBullet extends Actor
          if(hit==false&&getOneIntersectingObject(Player.class)!=null){
              removeTouching(Player.class);
              ((Background)getWorld()).minusLives();
-             remove();
              hit = true;
+             remove();
            }
          if(hit==false&&getOneIntersectingObject(PBullet.class)!=null){
              removeTouching(PBullet.class);
-             remove();
              hit = true;
+             remove();
            }
          if(hit==false&&getY()>700){
              remove();
@@ -27,15 +27,16 @@ public class BBullet extends Actor
          if(hit==false&&getOneIntersectingObject(Player.class)!=null){
              removeTouching(Player.class);
              ((Background)getWorld()).minusLives();
-             remove();
              hit = true;
+             remove();
            }
          if(hit==false&&getOneIntersectingObject(PBullet.class)!=null){
              removeTouching(PBullet.class);
-             remove();
              hit = true;
+             remove();
            }
          if(hit==false&&getY()>700){
+             hit=true;
              remove();
             }
     }

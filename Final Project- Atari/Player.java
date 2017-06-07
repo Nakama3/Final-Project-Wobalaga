@@ -1,25 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo
 public class Player extends Actor
 {
-    public int x;
-    public int m=3; //movement speed
     public int cool; //cooldown time
     public boolean down=true; //spacebar pressed?
-    public boolean F;
-    public Player(int move, int x, boolean F){
-        this.m = m;
-        this.x = x;
-        this.F = F;
-    }
     public void act(){
         if(((Background)getWorld()).getBHP()>300){
             move();
         }
         shoot();
         if(((Background)getWorld()).getBHP()<300){
-            set();
             beam4();
             beam5();
+            beam();
+            beam2();
+            beam3();
         }
         if(((Background)getWorld()).getL()==4){
             beam();
@@ -27,23 +21,15 @@ public class Player extends Actor
             beam3();
         }
     }    
-    public void set(int x, boolean F){
-        if(F==true){
-            setLocation(x,getY());
-        }
-    }
     public void move(){ //player movement controls
         if (Greenfoot.isKeyDown("left"))
        {
-           move (-m);
+           move (-3);
        }   
        if (Greenfoot.isKeyDown("right"))
        {
-           move (m);
+           move (3);
        }
-    }
-    public void set(){
-        setLocation(250,getY());
     }
     public void shoot(){  //shoots abullet and waits 15 frames after the space has been
         if(Greenfoot.isKeyDown("space")==true&& down==true){//lifted to prevent beam()
@@ -68,14 +54,14 @@ public class Player extends Actor
     public void beam2(){ //just so that it can be a bit easier, shoots a bullet every frame
         double m = Math.random()*9;
         int n = (int)m;
-        if(Greenfoot.isKeyDown("n")){
+        if(Greenfoot.isKeyDown("space")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }
     public void beam3(){ //just so that it can be a bit easier, shoots a bullet every frame
         double m = Math.random()*9;
         int n = (int)m;
-        if(Greenfoot.isKeyDown("n")){
+        if(Greenfoot.isKeyDown("space")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }

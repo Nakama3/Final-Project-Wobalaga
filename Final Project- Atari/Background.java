@@ -95,7 +95,7 @@ public class Background extends World
            setBackground(new GreenfootImage("startscreen.png"));
            if(Greenfoot.isKeyDown("s")){
                R=false;
-               addObject(new Player(PM,Px,PF), 250, 670);
+               addObject(new Player(), 250, 670);
                addObject(new Life1(), 50, 50);
                addObject(new Life2(), 100, 50);
                S=true;
@@ -131,7 +131,7 @@ public class Background extends World
             }
         }
        if(Level==4&&RB==true){
-           setBackground(new GreenfootImage("level3text.png"));
+           setBackground(new GreenfootImage("bossstagetext.jpg"));
            removeObjects(getObjects(EBullet.class));
            removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("b")){
@@ -143,7 +143,8 @@ public class Background extends World
    public void Prespawn(){ //the player respawn, removing bullets to have a safe spawn
        removeObjects(getObjects(EBullet.class));
        removeObjects(getObjects(PBullet.class));
-       addObject(new Player(PM, Px, PF), 250, 670);
+       removeObjects(getObjects(BBullet.class));
+       addObject(new Player(), 250, 670);
     }
    public void Erespawn(){ //called when level starts, depending on level spawns
        if(Level==1){       //different types/amounts of enemies
