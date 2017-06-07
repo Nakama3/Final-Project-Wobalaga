@@ -9,18 +9,20 @@ public class Player extends Actor
         }
         shoot();
         if(((Background)getWorld()).getBHP()<300){
-            beam4();
-            beam5();
             beam();
             beam2();
             beam3();
+            set();
         }
         if(((Background)getWorld()).getL()==4){
             beam();
-            beam2();
-            beam3();
+            beam4();
+            beam5();
         }
-    }    
+    }  
+    public void set(){
+        setLocation(250,690);
+    }
     public void move(){ //player movement controls
         if (Greenfoot.isKeyDown("left"))
        {
@@ -52,16 +54,12 @@ public class Player extends Actor
         }
     }
     public void beam2(){ //just so that it can be a bit easier, shoots a bullet every frame
-        double m = Math.random()*9;
-        int n = (int)m;
-        if(Greenfoot.isKeyDown("space")){
+        if(Greenfoot.isKeyDown("b")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }
     public void beam3(){ //just so that it can be a bit easier, shoots a bullet every frame
-        double m = Math.random()*9;
-        int n = (int)m;
-        if(Greenfoot.isKeyDown("space")){
+        if(Greenfoot.isKeyDown("n")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
         }
     }

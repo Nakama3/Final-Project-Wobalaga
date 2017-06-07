@@ -9,13 +9,14 @@ public class Boss extends Actor
         if(((Background)getWorld()).getBHP()>300){
             swimp();
             swimn();
+            beam();
+            beam2();
+            beam3();
         }
-        beam();
-        beam2();
-        beam3();
         if(((Background)getWorld()).getBHP()<300){
             set();
             beam4();
+            beam2();
         }
     }
     public void swimp(){ //swim in the pos direction for 40 frames then go neg

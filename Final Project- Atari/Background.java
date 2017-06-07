@@ -6,7 +6,7 @@ public class Background extends World
    int Lives = 3;
    int Level = 0;
    int numE; // Amount of Enemies on screen
-   int BHP=1000; //Boss health
+   int BHP=301; //Boss health
    int PM = 3;
    int Px;
    boolean PF = false;
@@ -26,6 +26,9 @@ public class Background extends World
        Echeck();
        Lcheck();
        Scheck();
+    }
+   public boolean getWin(){
+       return true;
     }
    public int getL(){ //returns level
        return Level;
@@ -104,7 +107,7 @@ public class Background extends World
     }
    public void Lcheck(){ //clears the screen and waits for input to start the level
        if(Level==1&&R1==true){
-           setBackground(new GreenfootImage("level1text.png"));
+           setBackground(new GreenfootImage("level1textWithInstructions.jpg"));
            removeObjects(getObjects(EBullet.class));
            removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("1")){
@@ -113,7 +116,7 @@ public class Background extends World
             }
         }
        if(Level==2&&R2==true){
-           setBackground(new GreenfootImage("level2text.png"));
+           setBackground(new GreenfootImage("level2textWithInstruction.jpg"));
            removeObjects(getObjects(EBullet.class));
            removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("2")){
@@ -122,7 +125,7 @@ public class Background extends World
             }
         }
        if(Level==3&&R3==true){
-           setBackground(new GreenfootImage("level3text.png"));
+           setBackground(new GreenfootImage("level3textWithInstructinos.jpg"));
            removeObjects(getObjects(EBullet.class));
            removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("3")){
@@ -131,7 +134,7 @@ public class Background extends World
             }
         }
        if(Level==4&&RB==true){
-           setBackground(new GreenfootImage("bossstagetext.jpg"));
+           setBackground(new GreenfootImage("bossstagetextWithInstructions.jpg"));
            removeObjects(getObjects(EBullet.class));
            removeObjects(getObjects(PBullet.class));
            if(Greenfoot.isKeyDown("b")){
@@ -197,7 +200,7 @@ public class Background extends World
        removeObjects(getObjects(Boss.class));
        removeObjects(getObjects(Life1.class));
        removeObjects(getObjects(Life2.class));
-       //setBackground(new GreenfootImage("Gameover.jpg");
+       setBackground(new GreenfootImage("GameOverScreen.jpg"));
     }
    public void Win(){ //if game over removes every object and displays win screen 
        removeObjects(getObjects(EBullet.class)); //screen (didn't finish screen image)
@@ -208,6 +211,6 @@ public class Background extends World
        removeObjects(getObjects(Boss.class));
        removeObjects(getObjects(Life1.class));
        removeObjects(getObjects(Life2.class));
-       //setBackground(new GreenfootImage("win.jpg");
+       //setBackground(new GreenfootImage("win.jpg"));
     }
 }

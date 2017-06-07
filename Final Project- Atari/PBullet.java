@@ -24,11 +24,14 @@ public class PBullet extends Actor
              remove();
              hit = true;
            }
-         if(hit == false && getY()<5){
+         if(getY()<5){
              remove();
+             hit=true;
             }
       }
     public void remove(){ //removes bullet to not have it do excess damage to boss or kill more enemies than it should
-        getWorld().removeObject(this);
+        if(hit==true){
+            getWorld().removeObject(this);
+        }
     }
 }
