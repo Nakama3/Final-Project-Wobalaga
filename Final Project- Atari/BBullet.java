@@ -43,6 +43,7 @@ public class BBullet extends Actor
     public void remove(){ //removes bullet to not overkill player
         if(hit==true){
             getWorld().removeObject(this);
+            hit=false;
         }
     }
 }

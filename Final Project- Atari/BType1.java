@@ -3,5 +3,6 @@ public class BType1 extends EBullet
 {
     public void act(){ //enemy 1 bullet
         Shot();
+        
     }
 }
