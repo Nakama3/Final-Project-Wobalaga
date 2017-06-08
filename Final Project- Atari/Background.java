@@ -1,14 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Background extends World
 {
+   int Btimer=200;
    int H = 710;// Instance variables
    int W = 500;
    int Lives = 3;
    int Level = 0;
    int numE; // Amount of Enemies on screen
    int BHP=301; //Boss health
-   int PM = 3;
-   int Px;
+   int Ppush=0;
+   int Bpush=60;
    boolean PF = false;
    boolean hit;
    boolean S = false; //start game?
@@ -27,6 +28,19 @@ public class Background extends World
        Lcheck();
        Scheck();
     }
+   public void end(){
+       if(BHP<300){
+           if(Btimer>200){
+               if(Ppush>Bpush){
+                   
+                   
+                }
+            }
+        }
+    }
+   public void Ppush(){
+       Ppush=Ppush+1;
+    }
    public boolean getWin(){
        return true;
     }
@@ -41,11 +55,6 @@ public class Background extends World
     }
    public void minusBHP(){ // decrements boss HP
        BHP=BHP-1;
-       if(BHP<=300){
-           PM=0;
-           Px=250;
-           PF=true;
-        }
        if(BHP==0){
            Win();
         }
@@ -74,7 +83,7 @@ public class Background extends World
     }
    public void Echeck(){ //checks if there are enemies in game. If not increase level
        if(numE==0&&S==true&&F==false){ //and go to the corresponding level start screen
-           Level=Level+4;
+           Level=Level+1;
            if(Level==1){
                numE=10;
                R1=true;
