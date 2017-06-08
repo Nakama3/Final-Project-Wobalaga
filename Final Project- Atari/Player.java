@@ -14,7 +14,7 @@ public class Player extends Actor
             beam3();
             set();
         }
-        if(((Background)getWorld()).getL()==4){
+        if(((Background)getWorld()).getL()==4&&((Background)getWorld()).getBHP()>300){
             beam();
             beam4();
             beam5();

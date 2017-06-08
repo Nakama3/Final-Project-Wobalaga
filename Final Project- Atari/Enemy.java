@@ -24,7 +24,7 @@ public abstract class Enemy extends Actor
         }
     }     
     public void shoot(Actor z){ //shoot bullet in 1/15 of a chance every frame
-       double m = Math.random()*20;
+       double m = Math.random()*30;
        int n = (int) m;
        if(btimer>0){
            btimer--;

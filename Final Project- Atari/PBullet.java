@@ -18,6 +18,7 @@ public class PBullet extends Actor
          if(hit==false&&getOneIntersectingObject(Boss.class)!=null){
              hit=true;
              ((Background)getWorld()).minusBHP();
+             getWorld().removeObject(this);
              //hit = true;
            }
          if(hit==false&&getOneIntersectingObject(BBullet.class)!=null){

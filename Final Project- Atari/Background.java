@@ -74,7 +74,7 @@ public class Background extends World
     }
    public void Echeck(){ //checks if there are enemies in game. If not increase level
        if(numE==0&&S==true&&F==false){ //and go to the corresponding level start screen
-           Level=Level+1;
+           Level=Level+4;
            if(Level==1){
                numE=10;
                R1=true;
