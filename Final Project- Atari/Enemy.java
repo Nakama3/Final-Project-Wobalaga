@@ -6,10 +6,10 @@ public abstract class Enemy extends Actor
     public int w = 500;
     public int h = 712;
     public int timer=50;
+    public int btimer = 150;
     public boolean ready = false;
     public boolean pos = true;
     public boolean a = false;
-    EBullet z = new EBullet();
     public void spawnMove(int x, int y){ // in case wanted enemies to move to spawn
        if(getX()!=w/2&&getY()!=h/2&&a==false){ 
             turnTowards(w/2,h/2);
@@ -24,11 +24,17 @@ public abstract class Enemy extends Actor
         }
     }     
     public void shoot(Actor z){ //shoot bullet in 1/15 of a chance every frame
-        double m = Math.random()*15;
-        int n = (int)m;
-        if(n==5){
-            for(int i=0; i<3; i++){
-                getWorld().addObject(z, getX(), getY()+16);
+       double m = Math.random()*20;
+       int n = (int) m;
+       if(btimer>0){
+           btimer--;
+        }
+       if(btimer==0){
+           if(n==1){
+               for(int i=0; i<3; i++){
+                   getWorld().addObject(new BType1(), getX(), getY()+16);
+               }
+               btimer=150;
             }
         }
     }
