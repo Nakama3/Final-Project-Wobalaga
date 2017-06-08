@@ -56,11 +56,13 @@ public class Player extends Actor
     public void beam2(){ //just so that it can be a bit easier, shoots a bullet every frame
         if(Greenfoot.isKeyDown("b")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
+            ((Background)getWorld()).Ppush();
         }
     }
     public void beam3(){ //just so that it can be a bit easier, shoots a bullet every frame
         if(Greenfoot.isKeyDown("n")){
             getWorld().addObject(new PBullet(), getX(), getY()-16);
+            ((Background)getWorld()).Ppush();
         }
     }
     public void beam4(){ //just so that it can be a bit easier, shoots a bullet every frame

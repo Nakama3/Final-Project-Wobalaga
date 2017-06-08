@@ -45,6 +45,10 @@ public class Type2 extends Enemy{
                 A=false;
                 Recall();
         }
+        if(getOneIntersectingObject(Player.class)!=null){
+             removeTouching(Player.class);
+             ((Background)getWorld()).minusLives();
+           }
     }
     public void Recall(){ //returns to spawn when it hits end of screen
         if(A==false&&a==true&&getX()>5){
