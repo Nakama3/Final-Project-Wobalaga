@@ -7,7 +7,7 @@ public class Background extends World
    int Lives = 3;
    int Level = 0;
    int numE; // Amount of Enemies on screen
-   int BHP=301; //Boss health
+   int BHP=1000; //Boss health
    int Ppush=0;
    int Bpush=60;
    boolean PF = false;
@@ -27,6 +27,7 @@ public class Background extends World
        Echeck();
        Lcheck();
        Scheck();
+       Wcheck();
     }
    public void end(){
        if(BHP<300){
@@ -54,9 +55,8 @@ public class Background extends World
        numE=numE-1;
     }
    public void minusBHP(){ // decrements boss HP
-       BHP=BHP-1;
-       if(BHP==0){
-           Win();
+       if(BHP>=0){
+           BHP=BHP-1;
         }
     }
    public void minusLives(){ //decrements lives if player is hit
@@ -152,6 +152,11 @@ public class Background extends World
             }
         }
     }           
+   public void Wcheck(){
+       if(BHP==0){
+           Win();
+        }
+    }
    public void Prespawn(){ //the player respawn, removing bullets to have a safe spawn
        removeObjects(getObjects(EBullet.class));
        removeObjects(getObjects(PBullet.class));
@@ -220,6 +225,6 @@ public class Background extends World
        removeObjects(getObjects(Boss.class));
        removeObjects(getObjects(Life1.class));
        removeObjects(getObjects(Life2.class));
-       //setBackground(new GreenfootImage("win.jpg"));
+       setBackground(new GreenfootImage("winscreen.jpg"));
     }
 }
