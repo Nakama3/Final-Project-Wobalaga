@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=x\ y
+comment0.target=void\ spawnMove(int,\ int)
+comment1.params=z
+comment1.target=void\ shoot(greenfoot.Actor)
+comment2.params=
+comment2.target=void\ swimp()
+comment3.params=
+comment3.target=void\ swimn()
+numComments=4
