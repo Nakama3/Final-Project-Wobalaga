@@ -220,6 +220,6 @@ public class Background extends World
        removeObjects(getObjects(Boss.class));
        removeObjects(getObjects(Life1.class));
        removeObjects(getObjects(Life2.class));
-       //setBackground(new GreenfootImage("win.jpg"));
+       setBackground(new GreenfootImage("winscreen.jpg"));
     }
 }
