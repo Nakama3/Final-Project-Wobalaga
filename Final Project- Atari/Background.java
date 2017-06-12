@@ -107,7 +107,7 @@ public class Background extends World
            setBackground(new GreenfootImage("startscreen.png"));
            if(Greenfoot.isKeyDown("s")){
                R=false;
-               addObject(new Player(), 250, 670);
+               addObject(new Player(), 250, 650);
                addObject(new Life1(), 50, 50);
                addObject(new Life2(), 100, 50);
                S=true;
@@ -156,7 +156,7 @@ public class Background extends World
        removeObjects(getObjects(EBullet.class));
        removeObjects(getObjects(PBullet.class));
        removeObjects(getObjects(BBullet.class));
-       addObject(new Player(), 250, 670);
+       addObject(new Player(), 250, 650);
     }
    public void Erespawn(){ //called when level starts, depending on level spawns
        if(Level==1){       //different types/amounts of enemies

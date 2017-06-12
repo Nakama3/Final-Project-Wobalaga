@@ -50,16 +50,16 @@ public class Boss extends Actor
             getWorld().addObject(new BBullet(), getX()-30, getY()+100);
     }
     public void beam2(){ //shoot a bullet         
-            if(Greenfoot.isKeyDown("x")){
+            //if(Greenfoot.isKeyDown("x")){
                 getWorld().addObject(new BBullet(), getX(), getY()+100);
-            }
+            //}
     }
     public void beam3(){ //shoot a bullet         
             getWorld().addObject(new BBullet(), getX()+30, getY()+100);
     }
     public void beam4(){ //shoot a bullet         
-            if(Greenfoot.isKeyDown("z")){
+          //  if(Greenfoot.isKeyDown("z")){
                 getWorld().addObject(new BBullet(), getX(), getY()+100);
-            }
+           // }
     }
 }

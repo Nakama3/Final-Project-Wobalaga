@@ -32,7 +32,7 @@ public abstract class Enemy extends Actor
        if(btimer==0){
            if(n==1){
                for(int i=0; i<3; i++){
-                   getWorld().addObject(new BType1(), getX(), getY()+16);
+                   getWorld().addObject(z, getX(), getY()+16);
                }
                btimer=150;
             }

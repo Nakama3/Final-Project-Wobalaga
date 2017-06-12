@@ -15,7 +15,7 @@ public class Type2 extends Enemy{
     }
     public void act(){
         Attack();
-        shoot(z);
+        shoot(new BType2());
         Recall();
         //test();
     }
